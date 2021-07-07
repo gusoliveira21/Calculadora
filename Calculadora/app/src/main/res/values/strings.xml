@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="msg_erro_ao_inserir_simbolo">Informe a expressão corretamente!</string>
+
+    <string name="value_button_c">C</string>
+    <string name="value_button_subtraction">-</string>
+    <string name="value_button_plus">+</string>
+    <string name="value_button_division">/</string>
+    <string name="value_button_multiplication">*</string>
+    <string name="value_button_dot">.</string>
+    <string name="value_button_equals">=</string>
+
+    <string name="value_button_1">1</string>
+    <string name="value_button_2">2</string>
+    <string name="value_button_3">3</string>
+    <string name="value_button_4">4</string>
+    <string name="value_button_5">5</string>
+    <string name="value_button_6">6</string>
+    <string name="value_button_7">7</string>
+    <string name="value_button_8">8</string>
+    <string name="value_button_9">9</string>
+    <string name="value_button_0">0</string>
+
+
+</resources>

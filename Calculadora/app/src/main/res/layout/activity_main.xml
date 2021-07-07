@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="parent">
+
+    <data>
+
+        <variable
+            name="MainActivity"
+            type="gusoliveira21.calculadora.MainActivity" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_button_number"
+            android:textAlignment="center"
+
+            android:theme="@style/CardView">
+
+            <TextView
+                android:id="@+id/text_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif-monospace"
+
+                android:gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/textViewResultado"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textAlignment="textEnd"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btDelAll"
+                style="@style/style_by_long"
+                android:layout_width="177dp"
+                android:text="@string/value_button_c"
+                app:backgroundTint="@color/background_button_clean" />
+
+            <ImageButton
+                android:id="@+id/btDelLast"
+                style="@style/style_by_long"
+                android:layout_width="match_parent"
+                android:background="@color/background_button_clean"
+                app:srcCompat="@drawable/in_backspace"
+                tools:ignore="VectorDrawableCompat" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/bt1"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_1"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt2"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_2"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt3"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_3"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/btMultiplicacao"
+                style="@style/style_by_fat"
+                android:text="@string/value_button_multiplication"
+                app:backgroundTint="@color/background_button_simbol" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/bt4"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_4"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt5"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_5"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt6"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_6"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/btDivisao"
+                style="@style/style_by_fat"
+                android:text="@string/value_button_division"
+                app:backgroundTint="@color/background_button_simbol" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt7"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_7"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt8"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_8"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/bt9"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_9"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/btSubtracao"
+                style="@style/style_by_fat"
+                android:text="@string/value_button_subtraction"
+                app:backgroundTint="@color/background_button_simbol" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btVirgula"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_dot"
+                app:backgroundTint="@color/background_button_simbol" />
+
+            <Button
+                android:id="@+id/bt0"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_0"
+                app:backgroundTint="@color/background_button_number" />
+
+            <Button
+                android:id="@+id/btCalcular"
+                style="@style/style_by_skinny"
+                android:text="@string/value_button_equals"
+                app:backgroundTint="@color/background_button_equals" />
+
+            <Button
+                android:id="@+id/btSoma"
+                style="@style/style_by_fat"
+                android:text="@string/value_button_plus"
+                app:backgroundTint="@color/background_button_simbol" />
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
