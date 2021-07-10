@@ -131,7 +131,6 @@ class MainActivity : AppCompatActivity() {
         val listaDeValores = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
         val listaDeSimbolos = listOf("+", "-", "*", "/")
 
-
         for (i in ViewCampoDigitado!!.length - 2 downTo 0 step 1) {
             if (ViewCampoDigitado[i].toString().equals(".")) return true
 
@@ -145,9 +144,7 @@ class MainActivity : AppCompatActivity() {
                     listaDeSimbolos.forEachIndexed { index, value ->
                         if (ViewCampoDigitado[i - 1].toString().equals("$value")) return false
                     }
-
             }
-
         }
         return false
     }
