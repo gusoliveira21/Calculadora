@@ -55,6 +55,7 @@ Este trabalho teve como objetivo a construção de uma calculadora simples, que 
 
 ## :pushpin: Tarefas em aberto:
 - [ ] Dependendo da saída, verificar se deve ter casas decimais.
+- [ ] Não permitir o app a girar com a tela
 
 <br><br><br><br>
 
