@@ -12,110 +12,110 @@ import kotlin.math.log
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     var valor: Double = 0.0
-    //val stringParaSomar:String = "${binding.textViewResultado.text}"
+    //val stringParaSomar:String = "${binding.tvEntradaDados.text}"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.apply {
-            textViewResultado.setText("")
+            tvEntradaDados.setText("")
 
             bt0.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "0"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "0"
             }
             bt1.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "1"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "1"
             }
             bt2.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "2"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "2"
             }
             bt3.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "3"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "3"
             }
             bt4.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "4"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "4"
             }
             bt5.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "5"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "5"
             }
             bt6.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "6"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "6"
             }
             bt7.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "7"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "7"
             }
             bt8.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "8"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "8"
             }
             bt9.setOnClickListener {
-                binding.textViewResultado.text = "${binding.textViewResultado.text}" + "9"
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "9"
             }
 
 
             btSoma.setOnClickListener {
-                if (CheckIfIsEmpty(binding.textViewResultado.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.textViewResultado.text)
+                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
                 )
                     ToastMessage()
                 else
-                    binding.textViewResultado.text = "${binding.textViewResultado.text}" + "+"
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "+"
 
             }
             btDivisao.setOnClickListener {
-                if (CheckIfIsEmpty(binding.textViewResultado.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.textViewResultado.text)
+                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
                 )
                     ToastMessage()
                 else
-                    binding.textViewResultado.text = "${binding.textViewResultado.text}" + "/"
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "/"
             }
             btSubtracao.setOnClickListener {
-                if (CheckIfIsEmpty(binding.textViewResultado.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.textViewResultado.text)
+                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
                 )
                     ToastMessage()
                 else
 
-                    binding.textViewResultado.text = "${binding.textViewResultado.text}" + "-"
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "-"
 
             }
             btMultiplicacao.setOnClickListener {
-                if (CheckIfIsEmpty(binding.textViewResultado.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.textViewResultado.text)
+                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
                 )
                     ToastMessage()
                 else
 
-                    binding.textViewResultado.text = "${binding.textViewResultado.text}" + "*"
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "*"
             }
             btVirgula.setOnClickListener {
-                if (CheckIfIsEmpty(binding.textViewResultado.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.textViewResultado.text)
+                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
                 )
                     ToastMessage()
-                else if (VerificaSeJaFoiDigitadoUmPontoAnteriormente(binding.textViewResultado.text)) {
+                else if (VerificaSeJaFoiDigitadoUmPontoAnteriormente(binding.tvEntradaDados.text)) {
                     ToastMessage()
                 } else
-                    binding.textViewResultado.text = "${binding.textViewResultado.text}" + "."
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "."
 
             }
 
             btDelAll.setOnClickListener {
-                binding.textViewResultado.setText("")
+                binding.tvEntradaDados.setText("")
             }
             btDelLast.setOnClickListener {
-                if (binding.textViewResultado.text.isEmpty())
+                if (binding.tvEntradaDados.text.isEmpty())
                     Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
                 else
-                    binding.textViewResultado.setText(DeleteTheLastElement(binding.textViewResultado.text))
+                    binding.tvEntradaDados.setText(DeleteTheLastElement(binding.tvEntradaDados.text))
             }
 
             btCalcular.setOnClickListener {
-                if (binding.textViewResultado.text.isEmpty())
+                if (binding.tvEntradaDados.text.isEmpty())
                     Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
                 else {
-                    binding.textViewResultado.setText(Result(binding.textViewResultado.text))
+                    binding.tvEntradaDados.setText(Result(binding.tvEntradaDados.text))
                 }
             }
         }

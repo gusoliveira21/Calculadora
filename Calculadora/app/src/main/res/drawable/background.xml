@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
     <shape
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:shape="oval">
+        >
 
 <gradient
-    android:startColor="@color/background_button_equals"
-    android:endColor="@color/material_on_primary_emphasis_medium"/>
+    android:startColor="@color/background_button_clean"
+    android:endColor="@color/background_button_number"
+    android:angle="90"/>
 
     <size
             android:width="200dp"

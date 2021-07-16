@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_button_clean">#3F51B5</color>
-    <color name="background_button_number">#FF6200EE</color>
+    <color name="background_button_clean">#4D5EBD</color>
+    <color name="background_button_number">#5806CD</color>
     <color name="background_button_simbol">#FF3700B3</color>
     <color name="background_button_equals1">#FF03DAC5</color>
     <color name="purple_200">#FFBB86FC</color>
