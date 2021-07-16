@@ -2,15 +2,15 @@ package gusoliveira21.calculadora
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import gusoliveira21.calculadora.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
-import kotlin.math.log
+import kotlin.reflect.typeOf
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
     var valor: Double = 0.0
     //val stringParaSomar:String = "${binding.tvEntradaDados.text}"
 
@@ -18,6 +18,43 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
+        listenerNumbers()
+        listenerSimbolosMatematicos()
+        listenerDot()
+        listenerDelete()
+        listenerCalcular()
+
+
+    }
+
+    private fun listenerCalcular() {
+        binding.btCalcular.setOnClickListener {
+            if (binding.tvEntradaDados.text.isEmpty())
+                Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
+            else {
+                //binding.tvEntradaDados.setText(Result(binding.tvEntradaDados.text))
+                binding.tvExibeResposta.setText(Result(binding.tvEntradaDados.text))
+            }
+        }
+    }
+
+    private fun listenerDelete() {
+        binding.apply {
+            btDelAll.setOnClickListener {
+                binding.tvEntradaDados.setText("")
+                binding.tvExibeResposta.setText("")
+            }
+            btDelLast.setOnClickListener {
+                if (binding.tvEntradaDados.text.isEmpty())
+                    Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
+                else
+                    binding.tvEntradaDados.setText(DeleteTheLastElement(binding.tvEntradaDados.text))
+            }
+        }
+    }
+
+    private fun listenerNumbers() {
         binding.apply {
             tvEntradaDados.setText("")
 
@@ -51,8 +88,11 @@ class MainActivity : AppCompatActivity() {
             bt9.setOnClickListener {
                 binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "9"
             }
+        }
+    }
 
-
+    private fun listenerSimbolosMatematicos() {
+        binding.apply {
             btSoma.setOnClickListener {
                 if (CheckIfIsEmpty(binding.tvEntradaDados.text)
                     || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
@@ -89,35 +129,20 @@ class MainActivity : AppCompatActivity() {
 
                     binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "*"
             }
-            btVirgula.setOnClickListener {
-                if (CheckIfIsEmpty(binding.tvEntradaDados.text)
-                    || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
-                )
-                    ToastMessage()
-                else if (VerificaSeJaFoiDigitadoUmPontoAnteriormente(binding.tvEntradaDados.text)) {
-                    ToastMessage()
-                } else
-                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "."
+        }
+    }
 
-            }
+    private fun listenerDot() {
+        binding.btVirgula.setOnClickListener {
+            if (CheckIfIsEmpty(binding.tvEntradaDados.text)
+                || CheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)
+            )
+                ToastMessage()
+            else if (VerificaSeJaFoiDigitadoUmPontoAnteriormente(binding.tvEntradaDados.text)) {
+                ToastMessage()
+            } else
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "."
 
-            btDelAll.setOnClickListener {
-                binding.tvEntradaDados.setText("")
-            }
-            btDelLast.setOnClickListener {
-                if (binding.tvEntradaDados.text.isEmpty())
-                    Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
-                else
-                    binding.tvEntradaDados.setText(DeleteTheLastElement(binding.tvEntradaDados.text))
-            }
-
-            btCalcular.setOnClickListener {
-                if (binding.tvEntradaDados.text.isEmpty())
-                    Toast.makeText(this@MainActivity, "Campo Vazio", Toast.LENGTH_SHORT).show()
-                else {
-                    binding.tvEntradaDados.setText(Result(binding.tvEntradaDados.text))
-                }
-            }
         }
     }
 
@@ -183,9 +208,15 @@ class MainActivity : AppCompatActivity() {
 
         val eval = ExpressionBuilder(text).build()
         val res = eval.evaluate()
-        text = res.toString()
 
-        return String.format("%.2f", text.toDouble())
+        val longRes = res.toLong()
+
+        if(res == longRes.toDouble())
+            return longRes.toString()
+        else
+            return String.format("%.2f", res)
+
+        return ""
     }
 
 
