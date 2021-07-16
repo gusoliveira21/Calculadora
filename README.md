@@ -7,6 +7,28 @@
 
 # Calculadora 
 
+<p align='Center'>
+Clique aqui e baixe na google play!
+<p/>
+
+<p align='Center'>
+ :point_down:
+<p/>
+ 
+<p align='Center'>
+<a href="https://play.google.com/store/apps/details?id=gusoliveira21.calculadora">
+<img src='https://user-images.githubusercontent.com/42920754/125994119-9b6389fc-ba26-49d7-bd53-69bcd02b2045.jpg' width='15%'>
+</a>
+<p/>
+
+
+<p align='Center'>
+:point_up:
+<p/>
+
+
+
+<br>
 <br>
 
 ## :star: Objetivo:
@@ -45,18 +67,24 @@ Este trabalho teve como objetivo a construção de uma calculadora simples, que 
 - [x] Impossibilitar digitação de expressões matemáticas seguidas vezes.
 - [x] Impossibilitar a digitação de pontos/virgulas seguidas vezes.
 - [x] Impossibilitar a escrita de pontos/virgulas no início e fim de cada operação.
-- [x] Limitar operações em duas casas decimais.
+- [x] Limitar operações em duas casas decimais.- 
+- [x] Dependendo da saída, verificar se deve ter casas decimais.
+- [x] Não permitir o app a girar com a tela.
+- [x] Mudança no design da tela.
 
 <br>
 <p align="center">
 <img src='https://user-images.githubusercontent.com/42920754/124818345-4ea16380-df41-11eb-9c0b-19415296d8ba.gif' width='20%'>
+___
+<img src='https://user-images.githubusercontent.com/42920754/125992072-af1d5ccc-bd5c-49ac-a8d1-6daac50625a9.png' width='20%'>
+
 <p/>
 <br>
 
+
+
 ## :pushpin: Tarefas em aberto:
-- [x] Dependendo da saída, verificar se deve ter casas decimais.
-- [x] Não permitir o app a girar com a tela.
-- [x] Mudança no design da tela.
+- [ ]
 
 <br><br><br><br>
 
