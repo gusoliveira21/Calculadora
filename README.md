@@ -25,10 +25,6 @@ Clique aqui e baixe na google play!
 <p align='Center'>
 :point_up:
 <p/>
-
-
-
-<br>
 <br>
 
 ## :star: Objetivo:
