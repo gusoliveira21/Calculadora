@@ -1,5 +1,7 @@
 package gusoliveira21.calculadora
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import gusoliveira21.calculadora.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -7,8 +9,9 @@ import net.objecthunter.exp4j.ExpressionBuilder
 class MainViewModel: ViewModel() {
     val simbol = listOf("+","-","/","*",".")
     val clean = ""
-
-
+    private var _campoDigitacao = MutableLiveData<String>()
+    val campoDigitacao: LiveData<String>
+        get() = _campoDigitacao
 
 
     fun onVerificaSeJaFoiDigitadoUmPontoAnteriormente(ViewCampoDigitado: CharSequence?): Boolean {
