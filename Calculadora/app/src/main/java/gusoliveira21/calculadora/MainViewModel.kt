@@ -1,13 +1,15 @@
 package gusoliveira21.calculadora
 
 import androidx.lifecycle.ViewModel
-import gusoliveira21.calculadora.databinding.FragmentCalculatorBinding
+import gusoliveira21.calculadora.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
-
-class CalculatorViewModel: ViewModel() {
+class MainViewModel: ViewModel() {
     val simbol = listOf("+","-","/","*",".")
     val clean = ""
+
+
+
 
     fun onVerificaSeJaFoiDigitadoUmPontoAnteriormente(ViewCampoDigitado: CharSequence?): Boolean {
         val listaDeValores = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
@@ -70,7 +72,7 @@ class CalculatorViewModel: ViewModel() {
         return ""
     }
 
-    fun onConditionalTest(binding: FragmentCalculatorBinding):Boolean {
+    fun onConditionalTest(binding: ActivityMainBinding):Boolean {
         if ((onCheckIfIsEmpty(binding.tvEntradaDados.text) || onCheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)))
             return true
         return false
