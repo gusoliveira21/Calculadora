@@ -5,55 +5,140 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import gusoliveira21.calculadora.databinding.FragmentCalculatorBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CalculatorFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CalculatorFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentCalculatorBinding
+    lateinit var viewModel: MainViewModel
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?,): View? {
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_calculator,container,false)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        //binding.gameViewModel = viewModel
+        //binding.lifecycleOwner = viewLifecycleOwner
+
+        listenerNumbers()
+        listenerSimbolosMatematicos()
+        listenerDot()
+        listenerDelete()
+        listenerExibeResposta()
+
+        return binding.root
+    }
+
+    private fun ToastMessage() {
+
+    }
+
+    private fun listenerDot() {
+        binding.btVirgula.setOnClickListener {
+            if (viewModel.onConditionalTest(binding))
+                ToastMessage()
+            else if (viewModel.onVerificaSeJaFoiDigitadoUmPontoAnteriormente(binding.tvEntradaDados.text))
+                ToastMessage()
+            else
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "."
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calculator, container, false)
+    private fun listenerSimbolosMatematicos() {
+        binding.apply {
+            btSoma.setOnClickListener {
+                if (viewModel.onConditionalTest(binding))
+                    ToastMessage()
+                else
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "+"
+            }
+
+            btDivisao.setOnClickListener {
+                if (viewModel.onConditionalTest(binding))
+                    ToastMessage()
+                else
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "/"
+            }
+            btSubtracao.setOnClickListener {
+                if (viewModel.onConditionalTest(binding))
+                    ToastMessage()
+                else
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "-"
+            }
+            btMultiplicacao.setOnClickListener {
+                if (viewModel.onConditionalTest(binding))
+                    ToastMessage()
+                else
+                    binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "*"
+            }
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CalculatorFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CalculatorFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun listenerExibeResposta() {
+        binding.btCalcular.setOnClickListener {
+            if (binding.tvEntradaDados.text.isEmpty())
+                Toast.makeText(context, "Campo Vazio", Toast.LENGTH_SHORT).show()
+            else {
+                binding.tvExibeResposta.setText(viewModel.onResult(binding.tvEntradaDados.text))
             }
+        }
     }
+
+    private fun listenerDelete() {
+        binding.apply {
+            btDelAll.setOnClickListener {
+                binding.tvEntradaDados.text = viewModel.clean
+                binding.tvExibeResposta.text = viewModel.clean
+            }
+
+            btDelLast.setOnClickListener {
+                if (binding.tvEntradaDados.text.isEmpty())
+                    Toast.makeText(context, "Campo Vazio", Toast.LENGTH_SHORT).show()
+                else
+                    binding.tvEntradaDados.setText(
+                        viewModel.onDeleteTheLastElement(
+                            binding.tvEntradaDados.text))
+            }
+        }
+    }
+
+    private fun listenerNumbers() {
+        binding.apply {
+            tvEntradaDados.setText("")
+
+            bt0.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "0"
+            }
+            bt1.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "1"
+            }
+            bt2.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "2"
+            }
+            bt3.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "3"
+            }
+            bt4.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "4"
+            }
+            bt5.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "5"
+            }
+            bt6.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "6"
+            }
+            bt7.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "7"
+            }
+            bt8.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "8"
+            }
+            bt9.setOnClickListener {
+                binding.tvEntradaDados.text = "${binding.tvEntradaDados.text}" + "9"
+            }
+        }
+    }
+
+
+
 }
