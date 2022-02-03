@@ -6,7 +6,7 @@ import net.objecthunter.exp4j.ExpressionBuilder
 
 
 class CalculatorViewModel: ViewModel() {
-    private val simbol = listOf("+","-","/","*",".")
+    val simbol = listOf("+","-","/","*",".")
     val clean = ""
 
     fun onVerificaSeJaFoiDigitadoUmPontoAnteriormente(ViewCampoDigitado: CharSequence?): Boolean {
@@ -51,7 +51,7 @@ class CalculatorViewModel: ViewModel() {
     }
 
     fun onResult(ViewCampoDigitado: CharSequence): CharSequence {
-        val text: String
+        var text: String
         if (onCheckIfLastElementOfListIsSymbol(ViewCampoDigitado))
             text = ViewCampoDigitado.subSequence(0, ViewCampoDigitado.length - 1).toString()
         else
