@@ -1,10 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext{
-        navigationVersion = "2.3.0"
-        kotlin_version = "1.5.10"
-    }
-
+    ext.kotlin_version = "1.5.10"
     repositories {
         google()
         mavenCentral()
