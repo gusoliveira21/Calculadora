@@ -1,11 +1,16 @@
 package gusoliveira21.calculadora
 
 import androidx.lifecycle.ViewModel
-import gusoliveira21.calculadora.databinding.ActivityMainBinding
+import gusoliveira21.calculadora.databinding.FragmentCalculatorBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
 <<<<<<< HEAD:Calculadora/app/src/main/java/gusoliveira21/calculadora/MainViewModel.kt
+<<<<<<< HEAD:Calculadora/app/src/main/java/gusoliveira21/calculadora/MainViewModel.kt
 class MainViewModel: ViewModel() {
+=======
+
+class CalculatorViewModel: ViewModel() {
+>>>>>>> parent of c861f96 (Revert "adiciona navigation e corrige bug de exibição"):Calculadora/app/src/main/java/gusoliveira21/calculadora/CalculatorViewModel.kt
     val simbol = listOf("+","-","/","*",".")
 =======
 
@@ -13,9 +18,6 @@ class CalculatorViewModel: ViewModel() {
     private val simbol = listOf("+","-","/","*",".")
 >>>>>>> parent of 15aee0b (Revert "Refatora variáveis simbol e text"):Calculadora/app/src/main/java/gusoliveira21/calculadora/CalculatorViewModel.kt
     val clean = ""
-
-
-
 
     fun onVerificaSeJaFoiDigitadoUmPontoAnteriormente(ViewCampoDigitado: CharSequence?): Boolean {
         val listaDeValores = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
@@ -78,7 +80,7 @@ class CalculatorViewModel: ViewModel() {
         return ""
     }
 
-    fun onConditionalTest(binding: ActivityMainBinding):Boolean {
+    fun onConditionalTest(binding: FragmentCalculatorBinding):Boolean {
         if ((onCheckIfIsEmpty(binding.tvEntradaDados.text) || onCheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)))
             return true
         return false
