@@ -4,8 +4,14 @@ import androidx.lifecycle.ViewModel
 import gusoliveira21.calculadora.databinding.ActivityMainBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
+<<<<<<< HEAD:Calculadora/app/src/main/java/gusoliveira21/calculadora/MainViewModel.kt
 class MainViewModel: ViewModel() {
     val simbol = listOf("+","-","/","*",".")
+=======
+
+class CalculatorViewModel: ViewModel() {
+    private val simbol = listOf("+","-","/","*",".")
+>>>>>>> parent of 15aee0b (Revert "Refatora variáveis simbol e text"):Calculadora/app/src/main/java/gusoliveira21/calculadora/CalculatorViewModel.kt
     val clean = ""
 
 
@@ -53,7 +59,7 @@ class MainViewModel: ViewModel() {
     }
 
     fun onResult(ViewCampoDigitado: CharSequence): CharSequence {
-        var text: String
+        val text: String
         if (onCheckIfLastElementOfListIsSymbol(ViewCampoDigitado))
             text = ViewCampoDigitado.subSequence(0, ViewCampoDigitado.length - 1).toString()
         else
