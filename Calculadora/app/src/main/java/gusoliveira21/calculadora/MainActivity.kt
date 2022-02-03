@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import gusoliveira21.calculadora.databinding.ActivityMainBinding
 
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+       /* binding.mainViewModel
+        viewModel.campoDigitacao.observe(viewLifecycleOwner)*/
         //binding.lifecycleOwner = viewLifecycleOwner
         listenerNumbers()
         listenerSimbolosMatematicos()
