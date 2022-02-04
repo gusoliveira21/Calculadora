@@ -3,7 +3,7 @@ package gusoliveira21.calculadora
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import gusoliveira21.calculadora.databinding.ActivityMainBinding
+import gusoliveira21.calculadora.databinding.FragmentCalculatorBinding
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainViewModel: ViewModel() {
@@ -75,7 +75,7 @@ class MainViewModel: ViewModel() {
         return ""
     }
 
-    fun onConditionalTest(binding: ActivityMainBinding):Boolean {
+    fun onConditionalTest(binding: FragmentCalculatorBinding):Boolean {
         if ((onCheckIfIsEmpty(binding.tvEntradaDados.text) || onCheckIfLastElementOfListIsSymbol(binding.tvEntradaDados.text)))
             return true
         return false
