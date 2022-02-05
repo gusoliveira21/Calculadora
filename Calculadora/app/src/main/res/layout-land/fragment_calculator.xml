@@ -16,24 +16,13 @@
         <!--Toolbar exibe titulo-->
 
 
-        <!--LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                tools:ignore="MissingConstraints">
-
-
-            </LinearLayout-->
-
-
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
+            android:id="@+id/cardView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:cardCornerRadius="16dp"
             app:layout_constraintBottom_toTopOf="@+id/btDelAll"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -49,7 +38,7 @@
                     android:textSize="34sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     tools:text="Resultado" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -61,33 +50,32 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvExibeResposta"
                     tools:text="Entrada" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.cardview.widget.CardView>
+
 
         <ImageButton
             android:id="@+id/btDelLast"
             style="@style/style_by_long"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_width="364dp"
+            android:layout_height="40dp"
             android:background="@color/background_button_clean"
-            app:layout_constraintBottom_toBottomOf="@+id/btDelAll"
+            app:layout_constraintBottom_toTopOf="@+id/bt3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btDelAll"
-            app:layout_constraintTop_toTopOf="@+id/btDelAll"
-            app:layout_constraintVertical_bias="0.478"
             app:srcCompat="@drawable/in_backspace"
             tools:ignore="VectorDrawableCompat" />
 
         <Button
             android:id="@+id/btDelAll"
             style="@style/style_by_long"
-            android:layout_width="206dp"
-            android:layout_height="60dp"
+            android:layout_width="364dp"
+            android:layout_height="40dp"
             android:text="@string/value_button_c"
-            android:textSize="38sp"
+            android:textSize="20sp"
             app:backgroundTint="@color/background_button_clean"
             app:layout_constraintBottom_toTopOf="@+id/bt1"
             app:layout_constraintEnd_toStartOf="@+id/btDelLast"
@@ -96,12 +84,51 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/bt5"
+            style="@style/style_by_skinny"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_5"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/bt8"
+            app:layout_constraintEnd_toStartOf="@+id/bt6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt4" />
+
+        <Button
+            android:id="@+id/bt6"
+            style="@style/style_by_skinny"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_6"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/bt9"
+            app:layout_constraintEnd_toStartOf="@+id/btDivisao"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt5" />
+
+        <Button
+            android:id="@+id/bt8"
+            style="@style/style_by_skinny"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_8"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/bt0"
+            app:layout_constraintEnd_toStartOf="@+id/bt9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt7" />
+
+        <Button
             android:id="@+id/bt1"
             style="@style/style_by_skinny"
-            android:layout_width="0dp"
-            android:layout_height="112dp"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
             android:text="@string/value_button_1"
-            android:textSize="38sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_number"
             app:layout_constraintBottom_toTopOf="@+id/bt4"
             app:layout_constraintEnd_toStartOf="@+id/bt2"
@@ -110,12 +137,25 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/bt2"
+            style="@style/style_by_skinny"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_2"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/bt5"
+            app:layout_constraintEnd_toStartOf="@+id/bt3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt1" />
+
+        <Button
             android:id="@+id/bt3"
             style="@style/style_by_skinny"
-            android:layout_width="101dp"
-            android:layout_height="112dp"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
             android:text="@string/value_button_3"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_number"
             app:layout_constraintBottom_toTopOf="@+id/bt6"
             app:layout_constraintEnd_toStartOf="@+id/btMultiplicacao"
@@ -125,10 +165,10 @@
         <Button
             android:id="@+id/btMultiplicacao"
             style="@style/style_by_fat"
-            android:layout_width="0dp"
-            android:layout_height="112dp"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
             android:text="@string/value_button_multiplication"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_simbol"
             app:layout_constraintBottom_toTopOf="@+id/btDivisao"
             app:layout_constraintEnd_toEndOf="parent"
@@ -136,39 +176,12 @@
             app:layout_constraintStart_toEndOf="@+id/bt3" />
 
         <Button
-            android:id="@+id/bt2"
-            style="@style/style_by_skinny"
-            android:layout_width="102dp"
-            android:layout_height="112dp"
-            android:text="@string/value_button_2"
-            android:textSize="38sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/bt5"
-            app:layout_constraintEnd_toStartOf="@+id/bt3"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt1" />
-
-
-        <Button
-            android:id="@+id/bt5"
-            style="@style/style_by_skinny"
-            android:layout_width="102dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_5"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/bt8"
-            app:layout_constraintEnd_toStartOf="@+id/bt6"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt4" />
-
-        <Button
             android:id="@+id/bt4"
             style="@style/style_by_skinny"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
             android:text="@string/value_button_4"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_number"
             app:layout_constraintBottom_toTopOf="@+id/bt7"
             app:layout_constraintEnd_toStartOf="@+id/bt5"
@@ -177,93 +190,25 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/btDivisao"
-            style="@style/style_by_fat"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_division"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_simbol"
-            app:layout_constraintBottom_toTopOf="@+id/btSubtracao"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt6" />
-
-        <Button
-            android:id="@+id/bt6"
-            style="@style/style_by_skinny"
-            android:layout_width="101dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_6"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/bt9"
-            app:layout_constraintEnd_toStartOf="@+id/btDivisao"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt5" />
-
-
-        <Button
-            android:id="@+id/bt9"
-            style="@style/style_by_skinny"
-            android:layout_width="101dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_9"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/btCalcular"
-            app:layout_constraintEnd_toStartOf="@+id/btSubtracao"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt8" />
-
-        <Button
-            android:id="@+id/bt7"
-            style="@style/style_by_skinny"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_7"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/btVirgula"
-            app:layout_constraintEnd_toStartOf="@+id/bt8"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/bt8"
-            style="@style/style_by_skinny"
-            android:layout_width="102dp"
-            android:layout_height="113dp"
-            android:text="@string/value_button_8"
-            android:textSize="48sp"
-            app:backgroundTint="@color/background_button_number"
-            app:layout_constraintBottom_toTopOf="@+id/bt0"
-            app:layout_constraintEnd_toStartOf="@+id/bt9"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/bt7" />
-
-        <Button
             android:id="@+id/btSubtracao"
             style="@style/style_by_fat"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
             android:text="@string/value_button_subtraction"
-            android:textSize="48sp"
+            android:textSize="38sp"
             app:backgroundTint="@color/background_button_simbol"
             app:layout_constraintBottom_toTopOf="@+id/btSoma"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/bt9" />
 
-
         <Button
             android:id="@+id/btVirgula"
             style="@style/style_by_skinny"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
+            android:layout_width="181dp"
+            android:layout_height="0dp"
             android:text="@string/value_button_dot"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_simbol"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/bt0"
@@ -274,10 +219,10 @@
         <Button
             android:id="@+id/bt0"
             style="@style/style_by_skinny"
-            android:layout_width="102dp"
-            android:layout_height="113dp"
+            android:layout_width="182dp"
+            android:layout_height="0dp"
             android:text="@string/value_button_0"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btCalcular"
@@ -287,10 +232,10 @@
         <Button
             android:id="@+id/btCalcular"
             style="@style/style_by_skinny"
-            android:layout_width="101dp"
-            android:layout_height="113dp"
+            android:layout_width="181dp"
+            android:layout_height="0dp"
             android:text="@string/value_button_equals"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_equals"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btSoma"
@@ -300,15 +245,56 @@
         <Button
             android:id="@+id/btSoma"
             style="@style/style_by_fat"
-            android:layout_width="0dp"
-            android:layout_height="113dp"
+            android:layout_width="182dp"
+            android:layout_height="0dp"
             android:text="@string/value_button_plus"
-            android:textSize="48sp"
+            android:textSize="28sp"
             app:backgroundTint="@color/background_button_simbol"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btCalcular" />
+
+        <Button
+            android:id="@+id/bt9"
+            style="@style/style_by_skinny"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_9"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/btCalcular"
+            app:layout_constraintEnd_toStartOf="@+id/btSubtracao"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt8" />
+
+        <Button
+            android:id="@+id/btDivisao"
+            style="@style/style_by_fat"
+            android:layout_width="182dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_division"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_simbol"
+            app:layout_constraintBottom_toTopOf="@+id/btSubtracao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bt6" />
+
+        <Button
+            android:id="@+id/bt7"
+            style="@style/style_by_skinny"
+            android:layout_width="181dp"
+            android:layout_height="60dp"
+            android:text="@string/value_button_7"
+            android:textSize="28sp"
+            app:backgroundTint="@color/background_button_number"
+            app:layout_constraintBottom_toTopOf="@+id/btVirgula"
+            app:layout_constraintEnd_toStartOf="@+id/bt8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
