@@ -67,7 +67,7 @@ Este trabalho teve como objetivo a construção de uma calculadora simples, que 
 - [x] Dependendo da saída, verificar se deve ter casas decimais.
 - [x] Não permitir o app a girar com a tela.
 - [x] Mudança no design da tela.
-- [ ] Adicionar ao modelo MVVM utilizando ferramentar do Jetpack
+- [x] Adicionar ao modelo MVVM utilizando ferramentar do Jetpack
 - [ ] Adicionr layout horizontal
 
 <br>
