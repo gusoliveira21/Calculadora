@@ -12,16 +12,15 @@ import androidx.lifecycle.ViewModelProvider
 import gusoliveira21.calculadora.databinding.FragmentCalculatorBinding
 
 class CalculatorFragment : Fragment() {
-
     lateinit var binding: FragmentCalculatorBinding
-    lateinit var viewModel: MainViewModel
+    lateinit var viewModel: CalculatorViewModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calculator, container, false)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(CalculatorViewModel::class.java)
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
@@ -30,9 +29,7 @@ class CalculatorFragment : Fragment() {
             Log.e("ovserverValor", "recebido: $valor")
             binding.tvEntradaDados.text = viewModel.expressaoDigitada.value
         })
-
         return binding.root
     }
-
 }
 
