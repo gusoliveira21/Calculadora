@@ -68,7 +68,7 @@ Este trabalho teve como objetivo a construção de uma calculadora simples, que 
 - [x] Não permitir o app a girar com a tela.
 - [x] Mudança no design da tela.
 - [x] Adicionar ao modelo MVVM utilizando ferramentar do Jetpack.
-- [ ] Adicionr layout horizontal.
+- [x] Adicionr layout horizontal.
 
 <br>
 <p align="center">
@@ -82,7 +82,7 @@ ___
 
 
 ## :pushpin: Tarefas em aberto:
-- [ ]
+- [ ] Usar vinculação de dados em conjunto com o ViewModel 
 
 <br><br><br><br>
 
