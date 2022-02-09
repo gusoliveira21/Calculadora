@@ -1,5 +1,7 @@
 package gusoliveira21.calculadora
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -121,21 +123,26 @@ class CalculatorViewModel : ViewModel() {
     }
 
     private fun onCalculaResult(expressaoDigitada: LiveData<String>): String {
-        var value = ""
-        value = if (onCheckIfLastElementOfListIsSymbol(expressaoDigitada))
-            expressaoDigitada
-                .value!!
-                .subSequence(0, expressaoDigitada.value!!.length - 1)
-                .toString()
-        else
-            expressaoDigitada.value!!
-        val eval = ExpressionBuilder(value).build()
-        val res = eval.evaluate()
-        val longRes = res.toLong()
-        return if (res == longRes.toDouble())
-            longRes.toString()
-        else
-            String.format("%.2f", res)
+        try {
+            var value = ""
+            value = if (onCheckIfLastElementOfListIsSymbol(expressaoDigitada))
+                expressaoDigitada
+                    .value!!
+                    .subSequence(0, expressaoDigitada.value!!.length - 1)
+                    .toString()
+            else
+                expressaoDigitada.value!!
+            val eval = ExpressionBuilder(value).build()
+            val res = eval.evaluate()
+            val longRes = res.toLong()
+            return if (res == longRes.toDouble())
+                longRes.toString()
+            else
+                String.format("%.2f", res)
+        }catch (e:Exception){
+            //if(e.toString() == ("java.lang.ArithmeticException: Division by zero!"))
+            return expressaoDigitada.value!!
+        }
 
     }
 
