@@ -13,7 +13,7 @@ class CalculatorViewModel : ViewModel() {
     val expressaoDigitada: LiveData<String>
         get() = _expressaoDigitada
 
-    val clean = ""
+    private val clean = ""
 
 
     private fun onDigitaExpressao(valor: String) {
@@ -28,7 +28,7 @@ class CalculatorViewModel : ViewModel() {
                 12 -> onDigitaExpressao("-")
                 13 -> onDigitaExpressao("*")
                 14 -> onDigitaExpressao("/")
-                15 -> if (onCheckIfAHasDot(expressaoDigitada) == true) onDigitaExpressao(
+                15 -> if (onCheckIfAHasDot(expressaoDigitada)) onDigitaExpressao(
                     ".")
             }
         }
@@ -43,10 +43,10 @@ class CalculatorViewModel : ViewModel() {
 
     //TODO:Se for true, chame a função onDelete ultimo elemento!
     private fun onCheckIfLastElementOfListIsSymbol(campoDigitado: LiveData<String>): Boolean {
-        try {
-            return onCheckIfIsASymbol(campoDigitado.value!![campoDigitado.value!!.length - 1].toString())
+        return try {
+            onCheckIfIsASymbol(campoDigitado.value!![campoDigitado.value!!.length - 1].toString())
         } catch (e: Exception) {
-            return false
+            false
         }
     }
 
@@ -55,14 +55,13 @@ class CalculatorViewModel : ViewModel() {
         ((_listaDeSimbolos.indexOf(elementoParaVerificarSeESimbolo)) != -1)
 
     private fun onCheckIfAHasDot(campoDigitado: LiveData<String>): Boolean {
-        var qtdElementos = campoDigitado.value!!.length
-        if(contSimbol(qtdElementos,campoDigitado) == 0)
-            return true
-        else if(contDot(qtdElementos,campoDigitado) == 0)
-            return true
-        else if(findSimbol(qtdElementos,campoDigitado))
-            return true
-        return false
+        val qtdElementos = campoDigitado.value!!.length
+        return when {
+            contSimbol(qtdElementos,campoDigitado) == 0 -> true
+            contDot(qtdElementos,campoDigitado) == 0 -> true
+            findSimbol(qtdElementos,campoDigitado) -> true
+            else -> false
+        }
     }
 
     private fun findSimbol(qtdElementos:Int, campoDigitado: LiveData<String>):Boolean{
@@ -102,7 +101,7 @@ class CalculatorViewModel : ViewModel() {
     }
 
     fun onDeleteTheLastElement() {
-        if (onHasElementList(_expressaoDigitada) == true)
+        if (onHasElementList(_expressaoDigitada))
             _expressaoDigitada.value = (_expressaoDigitada.value!!.subSequence(0,
                 _expressaoDigitada.value!!.length - 1)).toString()
     }
@@ -111,7 +110,7 @@ class CalculatorViewModel : ViewModel() {
         _expressaoDigitada.value = retiraVirgula(onCalculaResult(expressaoDigitada))
     }
 
-    private fun retiraVirgula(onCalculaResult: String): String? {
+    private fun retiraVirgula(onCalculaResult: String): String {
         var valor = ""
         onDeleteAll()
         onCalculaResult.forEachIndexed { index, value ->
@@ -123,20 +122,21 @@ class CalculatorViewModel : ViewModel() {
 
     private fun onCalculaResult(expressaoDigitada: LiveData<String>): String {
         var value = ""
-        if (onCheckIfLastElementOfListIsSymbol(expressaoDigitada))
-            value = expressaoDigitada
+        value = if (onCheckIfLastElementOfListIsSymbol(expressaoDigitada))
+            expressaoDigitada
                 .value!!
                 .subSequence(0, expressaoDigitada.value!!.length - 1)
                 .toString()
         else
-            value = expressaoDigitada.value!!
+            expressaoDigitada.value!!
         val eval = ExpressionBuilder(value).build()
         val res = eval.evaluate()
         val longRes = res.toLong()
-        if (res == longRes.toDouble())
-            return longRes.toString()
+        return if (res == longRes.toDouble())
+            longRes.toString()
         else
-            return String.format("%.2f", res)
+            String.format("%.2f", res)
+
     }
 
 
