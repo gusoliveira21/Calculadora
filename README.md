@@ -69,20 +69,21 @@ Este trabalho teve como objetivo a construção de uma calculadora simples, que 
 - [x] Mudança no design da tela.
 - [x] Adicionar ao modelo MVVM utilizando ferramentar do Jetpack.
 - [x] Adicionr layout horizontal.
-
+- [X] Usar dataBinding em conjunto com o ViewModel.
+- [X] Correção de bugs de entrada inválida.
+- [X] Refatorar código.
 <br>
 <p align="center">
-<img src='https://user-images.githubusercontent.com/42920754/124818345-4ea16380-df41-11eb-9c0b-19415296d8ba.gif' width='20%'>
-___
-<img src='https://user-images.githubusercontent.com/42920754/125992072-af1d5ccc-bd5c-49ac-a8d1-6daac50625a9.png' width='20%'>
+<img src='https://user-images.githubusercontent.com/42920754/153310391-b779eded-7e66-4d24-b84f-e6e1ade6f81e.png' width='30%'>
 
+<img src='https://user-images.githubusercontent.com/42920754/153310401-5bd26818-a620-40fc-8b67-7df34a2d75e6.png' width='50%'>
 <p/>
 <br>
 
 
 
 ## :pushpin: Tarefas em aberto:
-- [ ] Usar vinculação de dados em conjunto com o ViewModel 
+ 
 
 <br><br><br><br>
 
